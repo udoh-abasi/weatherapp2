@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color: black;
+    --secondary-color: rgb(59 130 246);
+}
+
+main {
+    background: url("images/Used_Background_image_light.webp") no-repeat bottom;
+    background-size: cover;
+}
+
+.wrapper {
+    background-color: rgba(203, 213, 225, .9);
+    width: min(90vw, 800px);
+}
+
+
+/*STYLE THE RADIO BUTTON*/
+
+input:checked+label {
+    font-weight: bold;
+}
+
+.theLabel::before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f111 ";
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: var(--secondary-color);
+}
+
+input:checked~.theLabel::before {
+    content: "\f058";
+}
+
+
+/*STYLES FOR THE WIND DIRECTION*/
+
+#wind {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+#wind>* {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* STYLE THE DATE TO SHRINK ON SMALLER SCREENS */
+
+.todayDate {
+    font-size: clamp(.8rem, 4vw, 1rem);
+}
+
+
+/*DARK MODE PREFERENCE*/
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: white;
+        --secondary-color: rgb(90, 141, 223);
+    }
+
+    main {
+        background-image: url(images/Used_Background_image_dark.webp);
+    }
+
+    .wrapper {
+        background-color: rgba(30, 41, 59, .96)
+    }
+}
+
+
+/*FOR DARK MODE (even when light mode preference is active), RE-DeCLARE EVERYTHING IN THE "@media (prefers-color-scheme: dark)", USING THE 'dark' classname"*/
+
+html.dark {
+    --primary-color: white;
+    --secondary-color: rgb(90, 141, 223);
+}
+
+.dark main {
+    background-image: url(images/Used_Background_image_dark.webp);
+}
+
+.dark .wrapper {
+    background-color: rgba(30, 41, 59, .96);
+}
+
+/*FOR LIGHT MODE (even when dark mode preference is active), COUNTER EVERYTHING IN THE "@media (prefers-color-scheme: dark)", USING THE 'light' classname"*/
+/*THIS WORKS BECAUSE THIS COMES AFTER THE MEDIA QUERY - "@media (prefers-color-scheme: dark)"*/
+
+html.light {
+    --primary-color: black;
+    --secondary-color: rgb(59 130 246);
+}
+
+.light main {
+    background-image: url(images/Used_Background_image_light.webp);
+}
+
+.light .wrapper {
+    background-color: rgba(203, 213, 225, .9);
+}

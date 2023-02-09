@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Current Weather, Today's Weather" />
+    <meta
+      name="description"
+      content="Get the current weather for every major city in Nigeria"
+    />
+
+    <title>Current Weather and Today&apos;s Weather</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/5ba99d8be5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script async src="main.js" type="module"></script>
+  </head>
+
+  <body class="text-[var(--primary-color)]">
+    <main class="h-[100%] pt-8 flex flex-col items-center">
+      <article class="wrapper p-4 mb-16 rounded-3xl min-[700px]:p-10">
+        <link rel="stylesheet" href="toggler.css" />
+
+        <div class="flex justify-between items-center">
+          <time datetime="" class="todayDate font-bold"
+            >12 January, 2022 - 8:25</time
+          >
+          <div class="toggle">
+            <input
+              type="checkbox"
+              aria-label="Toggle between light and dark mode"
+              title="Toggle between light and dark mode"
+              id="darkLightCheckbox"
+            />
+            <label></label>
+          </div>
+        </div>
+
+        <h1
+          class="my-8 text-xl font-bold uppercase text-[var(--secondary-color)] text-center"
+        >
+          Weather forecast in major cities in Nigeria
+        </h1>
+
+        <form action="#" class="mb-8">
+          <select
+            class="citySelect rounded-xl p-1 font-bold bg-[var(--secondary-color)] text-white"
+            aria-label="Choose a City"
+          >
+            <option value="" selected disabled>Choose a City</option>
+            <option value="aba,ng">Aba, Abia State</option>
+            <option value="umuahia,ng">Umuahia, Abia State</option>
+            <option value="jimeta,ng">Jimeta, Adamawa State</option>
+            <option value="mubi,ng">Mubi,Adamawa State</option>
+            <option value="yola,ng">Yola, Adamawa State</option>
+            <option value="uyo,ng">Uyo, Akwa Ibom State</option>
+            <option value="ikot ekpene,ng">Ikot Ekpene, Akwa Ibom State</option>
+            <option value="awka,ng">Awka, Anambra State</option>
+            <option value="okpoko,ng">Okpoko, Anambra State</option>
+            <option value="onitsha,ng">Onitsha, Anambra State</option>
+            <option value="bauchi,ng">Bauchi State</option>
+            <option value="gboko,ng">Gboko, Benue State</option>
+            <option value="makurdi,ng">Makurdi, Benue State</option>
+            <option value="otukpo,ng">Otukpo, Benue State</option>
+            <option value="bama,ng">Bama, Borno State</option>
+            <option value="kukawa,ng">Kukawa, Borno State</option>
+            <option value="maiduguri,ng">Maiduguri, Borno State</option>
+            <option value="calabar,ng">Calabar, Cross River State</option>
+            <option value="ugep,ng">Ugep, Cross River State</option>
+            <option value="asaba,ng">Asaba, Delta State</option>
+            <option value="sapele,ng">Sapele, Delta State</option>
+            <option value="warri,ng">Warri, Delta State</option>
+            <option value="abakaliki,ng">Ebonyi State</option>
+            <option value="benin city,ng">Benin City, Edo State</option>
+            <option value="uromi,ng">Uromi, Edo State</option>
+            <option value="ado ekiti,ng">Ado Ekiti, Ekiti State</option>
+            <option value="ijero,ng">Ijero, Ekiti State</option>
+            <option value="llawe ekiti,ng">Ilawe Ekiti, Ekiti State</option>
+            <option value="ise ekiti,ng">Ise Ekiti, Ekiti State</option>
+            <option value="enugu,ng">Enugu, Enugu State</option>
+            <option value="nsukka,ng">Nsukka, Enugu State</option>
+            <option value="gombe,ng">Gombe State</option>
+            <option value="okigwe,ng">Okigwe, Imo State</option>
+            <option value="owerri,ng">Owerri, Imo State</option>
+            <option value="garki,ng">Jigawa State</option>
+            <option value="kaduna,ng">Kaduna, Kaduna State</option>
+            <option value="zaria,ng">Zaria, Kaduna State</option>
+            <option value="kano,ng">Kano State</option>
+            <option value="funtua,ng">Funtua, Kastina State</option>
+            <option value="kastina,ng">Kastina, Kastina State</option>
+            <option value="okene,ng">Kogi State</option>
+            <option value="illorin,ng">Kwara State</option>
+            <option value="badagry,ng">Badagry, Lagos State</option>
+            <option value="epe,ng">Epe, Lagos State</option>
+            <option value="ikeja,ng">Ikeja, Lagos State</option>
+            <option value="ikorodu,ng">Ikorodu, Lagos State</option>
+            <option value="lafia,ng">Nasarawa State</option>
+            <option value="bida,ng">Bida, Niger State</option>
+            <option value="lavun,ng">Lavun, Niger State</option>
+            <option value="minna,ng">Minna, Niger State</option>
+            <option value="mokwa,ng">Mokwa, Niger State</option>
+            <option value="suleja,ng">Suleja, Niger State</option>
+            <option value="abeokuta,ng">Abeokuta, Ogun State</option>
+            <option value="ijebu ode,ng">Ijebu Ode, Ogun State</option>
+            <option value="obafemi owode,ng">Obafemi Owode, Ogun State</option>
+            <option value="sagamu,ng">Sagamu, Ogun State</option>
+            <option value="akure,ng">Akure, Ondo State</option>
+            <option value="ikare,ng">Ikare, Ondo State</option>
+            <option value="ondo,ng">Ondo, Ondo State</option>
+            <option value="owo,ng">Owo, Ondo State</option>
+            <option value="gbonga,ng">Gbonga, Osun State</option>
+            <option value="ife,ng">Ife, Osun State</option>
+            <option value="ila,ng">Ila, Osun State</option>
+            <option value="ilesa,ng">Ilesa, Osun State</option>
+            <option value="iwo,ng">Iwo, Osun State</option>
+            <option value="osogbo,ng">Osogbo, Osun State</option>
+            <option value="ibadan,ng">Ibadan, Oyo State</option>
+            <option value="igboho,ng">Igboho, Oyo State</option>
+            <option value="Iseyin,ng">Iseyin, Oyo State</option>
+            <option value="kisi,ng">Kisi, Oyo State</option>
+            <option value="ogbomosho,ng">Ogbomosho, Oyo State</option>
+            <option value="oyo,ng">Oyo, Oyo State</option>
+            <option value="shaki,ng">Shaki, Oyo State</option>
+            <option value="jos,ng">Plateau State</option>
+            <option value="port harcourt,ng">
+              Port Harcourt, Rivers State
+            </option>
+            <option value="buguma,ng">Buguma, Rivers State</option>
+            <option value="sokoto,ng">Sokoto State</option>
+            <option value="jalingo,ng">Taraba State</option>
+            <option value="gashua,ng">Gashua, Yobe State</option>
+            <option value="patiskum,ng">Patiskum, Yobe State</option>
+            <option value="gusau,ng">Zamfara State</option>
+            <option value="abuja,ng">FCT</option>
+          </select>
+          <p class="errorElement hidden"></p>
+        </form>
+
+        <form
+          action="#"
+          class="mb-8 min-[600px]:flex min-[600px]:justify-between"
+        >
+          <div class="mb-4 relative">
+            <input
+              type="radio"
+              name="Weather"
+              id="currentWeather"
+              checked
+              class="w-[30px] h-[30px] absolute opacity-0"
+            />
+
+            <label for="currentWeather" class="theLabel">
+              Current Weather&apos;s Details
+            </label>
+          </div>
+
+          <div>
+            <input
+              type="radio"
+              name="Weather"
+              id="todayWeather"
+              class="w-[30px] h-[30px] absolute opacity-0"
+            />
+            <label for="todayWeather" class="theLabel">
+              Tomorrow&apos;s Weather Details
+            </label>
+          </div>
+        </form>
+
+        <div class="content_Replaced">
+          <p
+            class="flex justify-center items-center text-xl text-[var(--secondary-color)]"
+          >
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="p-2 font-bold uppercase">Uyo, Nigeria</span>
+          </p>
+
+          <div class="flex flex-col justify-center items-center">
+            <img
+              src="https://openweathermap.org/img/wn/10d@2x.png"
+              alt="The weather icon"
+              class="w-40"
+            />
+            <p
+              class="weatherValue text-7xl font-bold my-4 text-[var(--secondary-color)]"
+            >
+              30°C
+            </p>
+            <p class="WeatherName text-2xl font-bold uppercase">Stormy</p>
+            <p class="weatherDescription text-2xl">A little thunder storm</p>
+          </div>
+
+          <div id="wind">
+            <div
+              class="before:border-8 before:border-[var(--secondary-color)] before:rounded-[50%] rounded-[50%] before:w-[120px] w-[120px] before:h-[120px] h-[120px] before:absolute flex justify-center items-center m-auto mt-6 relative rotate-[120deg]"
+            >
+              <p
+                class="text-[var(--secondary-color)] flex flex-col items-center"
+              >
+                <span
+                  id="wind"
+                  class="block text-4xl top-[-33px] absolute font-bold text-blue-500"
+                  aria-label="Up pointing triangle"
+                >
+                  ▲
+                </span>
+              </p>
+            </div>
+            <p class="">
+              <span class="text-center block">1.90</span>
+              <span class="text-center block"> meter/sec</span>
+            </p>
+          </div>
+
+          <p class="flex justify-center mb-6 mt-5 font-bold text-2xl">
+            Wind Direction
+          </p>
+
+          <div class="text-lg">
+            <p>The sun will rise by: <span>--</span></p>
+            <p>The sun will set by: <span>--</span></p>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
